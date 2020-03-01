@@ -1,0 +1,46 @@
+<!-- Exercises: Events
+Mad Libs
+Start with this webpage, which has several input elements and a button: -->
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun">
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="person">
+ </ul>
+ 
+ <button id="lib-button">Lib it!</button>
+ 
+ <br><br>
+ <div id="story">
+
+ </div>
+
+    <script>  
+        let botao = document.getElementById("lib-button");
+
+        botao.addEventListener('click', makeMadLib);
+
+        function makeMadLib(){
+            let nome = document.getElementById("noun").value;
+            let adj = document.getElementById("adjective").value;
+            let pessoa = document.getElementById("person").value;
+            let story = document.getElementById("story");
+            let texto = nome+" é um estudante de desenvolvimento web, além de ser "+adj+". "+nome+" acabou de chegar em Florianóplis e conheceu seu amigo "+pessoa;
+
+            return story.innerHTML = texto;
+        }
+    </script>
+ </body>
+</html>
+<!-- Add a script tag to the bottom of the page for your code.
+Add an event listener to the button so that it calls a makeMadLib function when clicked.
+In the makeMadLib function, retrieve the current values of the form input elements, make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.") -->

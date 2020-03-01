@@ -1,0 +1,93 @@
+<!-- Calculator
+Start with this webpage, which has inputs and buttons for things to calculate: -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+  
+  <script>
+      let botao1 = document.getElementById("square-button");
+      let botao2 = document.getElementById("half-button");
+      let botao3 = document.getElementById("percent-button");
+      let botao4 = document.getElementById("area-button");
+
+      botao1.addEventListener('keyup', square);
+      botao2.addEventListener('keyup', half);
+      botao3.addEventListener('keyup', fraction);
+      botao4.addEventListener('keyup', cirle);
+
+      function square(){
+
+        let input = document.getElementById("square-input").value;
+        let output = document.getElementById("solution");
+        
+        input *= input;
+        
+        output.innerHTML = input;
+      }
+
+      function half(){
+        let input = document.getElementById("half-input").value;
+        let output = document.getElementById("solution");
+
+        input = input/2;
+        
+        output.innerHTML = input;
+      }
+
+      function fraction(){
+        let input1 = document.getElementById("percent1-input").value;
+        let input2 = document.getElementById("percent2-input").value;
+        let output = document.getElementById("solution");
+
+        output.innerHTML = "Em Desenvolvimento...";
+      }
+
+      function cirle(){
+        let input = document.getElementById("area-input").value;
+        let output = document.getElementById("solution");
+
+        input *= input*3.14;
+        console.log(input);
+      }
+
+  </script>
+  
+</body>
+</html>
+<!-- Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
+For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+Bonus: respond to key presses so that the user doesn't have to click the button. -->
