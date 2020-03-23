@@ -1,0 +1,18 @@
+<html>
+    <!-- <script src="script.js" defer></script> -->
+    <body>
+        <h1>Dados</h1>
+        <div id="dados">
+
+        </div>
+
+    <script>
+        const result = document.getElementById('results')
+
+        new URLSearchParams(window.location.search).forEach((value, name) =>{
+        result.append(`${name}: ${value}`)
+        result.append(document.createElement('br'));
+        });
+    </script>
+    </body>
+</html>
