@@ -65,17 +65,15 @@ const books = [
 
 const expected_result = false
 
-const s20 = by => by <= 2000;
-
 const everyoneWasBornOnSecXX = () => {
-  const result = books => books.every(s20);
-
-  return result(books);
+  return books.every(book => book.author.birthYear < 2001 && book.author.birthYear > 1900);
 }
 
-console.log(everyoneWasBornOnSecXX());
+if (everyoneWasBornOnSecXX() === false) {
+  console.log('Teste passou');
+}
 
-// assert.equal(everyoneWasBornOnSecXX(), expected_result);
+assert.equal(everyoneWasBornOnSecXX(), expected_result);
 
 // Faça uma função que retorne true se todas as pessoas autoras nasceram no século XX ou false caso contrário.
 
