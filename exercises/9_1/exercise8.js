@@ -63,18 +63,36 @@ const books = [
   },
 ];
 
-const smallerName = (books) => {
-  books.sort((a, b) => {
-    if (a.name.length > b.name.length) return 1;
-    if (a.name.length < b.name.length) return -1;
-    return 0;
-  });
+const expected_result = [
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+    releaseYear: 1928
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954
+  }
+]
 
-  return books[0].name;
+function oldBooks() {
+  // escreva seu código aqui
 }
 
-// Retorne o nome do livro de menor nome.
+assert.deepEqual(oldBooks(), expected_result);
 
-// Dica: use a função forEach.
+// Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
 
-assert.equal(smallerName(books), 'Duna');
+// Dica: use as funções filter e sort

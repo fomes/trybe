@@ -63,18 +63,14 @@ const books = [
   },
 ];
 
-const smallerName = (books) => {
-  books.sort((a, b) => {
-    if (a.name.length > b.name.length) return 1;
-    if (a.name.length < b.name.length) return -1;
-    return 0;
-  });
+const expected_result = 'O Senhor dos Anéis';
 
-  return books[0].name;
+function authorWith3DotsOnName() {
+  // escreva seu código aqui
 }
 
-// Retorne o nome do livro de menor nome.
+assert.deepEqual(authorWith3DotsOnName(), expected_result);
 
-// Dica: use a função forEach.
+// Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais (terminam com um ponto).
 
-assert.equal(smallerName(books), 'Duna');
+// Dica: use as funções find e filter;

@@ -63,18 +63,20 @@ const books = [
   },
 ];
 
-const smallerName = (books) => {
-  books.sort((a, b) => {
-    if (a.name.length > b.name.length) return 1;
-    if (a.name.length < b.name.length) return -1;
-    return 0;
-  });
+const expected_result = false
 
-  return books[0].name;
+const s20 = by => by <= 2000;
+
+const everyoneWasBornOnSecXX = () => {
+  const result = books => books.every(s20);
+
+  return result(books);
 }
 
-// Retorne o nome do livro de menor nome.
+console.log(everyoneWasBornOnSecXX());
 
-// Dica: use a função forEach.
+// assert.equal(everyoneWasBornOnSecXX(), expected_result);
 
-assert.equal(smallerName(books), 'Duna');
+// Faça uma função que retorne true se todas as pessoas autoras nasceram no século XX ou false caso contrário.
+
+// Dica: use a função every
